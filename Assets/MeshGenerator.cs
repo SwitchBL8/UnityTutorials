@@ -28,10 +28,10 @@ public class MeshGenerator : MonoBehaviour {
 
 
 					Gizmos.color = Color.grey;
-					Gizmos.DrawCube(squareGrid.squares[x,y].centreTop.position, Vector3.one * .15f);
-					Gizmos.DrawCube(squareGrid.squares[x,y].centreRight.position, Vector3.one * .15f);
-					Gizmos.DrawCube(squareGrid.squares[x,y].centreBottom.position, Vector3.one * .15f);
-					Gizmos.DrawCube(squareGrid.squares[x,y].centreLeft.position, Vector3.one * .15f);
+					Gizmos.DrawCube(squareGrid.squares[x,y].centerTop.position, Vector3.one * .15f);
+					Gizmos.DrawCube(squareGrid.squares[x,y].centerRight.position, Vector3.one * .15f);
+					Gizmos.DrawCube(squareGrid.squares[x,y].centerBottom.position, Vector3.one * .15f);
+					Gizmos.DrawCube(squareGrid.squares[x,y].centerLeft.position, Vector3.one * .15f);
 
 				}
 			}
@@ -69,7 +69,7 @@ public class MeshGenerator : MonoBehaviour {
 	public class Square {
 
 		public ControlNode topLeft, topRight, bottomRight, bottomLeft;
-		public Node centreTop, centreRight, centreBottom, centreLeft;
+		public Node centerTop, centerRight, centerBottom, centerLeft;
 
 		public Square (ControlNode _topLeft, ControlNode _topRight, ControlNode _bottomRight, ControlNode _bottomLeft) {
 			topLeft = _topLeft;
@@ -77,10 +77,10 @@ public class MeshGenerator : MonoBehaviour {
 			bottomRight = _bottomRight;
 			bottomLeft = _bottomLeft;
 
-			centreTop = topLeft.right;
-			centreRight = bottomRight.above;
-			centreBottom = bottomLeft.right;
-			centreLeft = bottomLeft.above;
+			centerTop = topLeft.right;
+			centerRight = bottomRight.above;
+			centerBottom = bottomLeft.right;
+			centerLeft = bottomLeft.above;
 		}
 	}
 
