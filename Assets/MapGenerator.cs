@@ -33,6 +33,9 @@ public class MapGenerator : MonoBehaviour {
 			SmoothMap();
 		}
 
+		MeshGenerator meshGen = GetComponent<MeshGenerator>();
+		meshGen.GenerateMesh(map, 1);
+
 
 	}
 
